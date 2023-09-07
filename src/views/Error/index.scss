@@ -1,0 +1,30 @@
+@use "../../stylesheets/fonts";
+@use "../../stylesheets/variables";
+@import "../../stylesheets/fonts";
+
+.error__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+
+  &--title {
+    display: flex;
+
+    @include fonts.h1;
+    font-size: 8vw;
+  }
+
+  &--blurb {
+    display: flex;
+    text-align: center;
+
+    @include fonts.h2;
+    font-size: 3vw;
+  }
+
+  .app--portal & {
+    @include variables.dark-background;
+  }
+}
