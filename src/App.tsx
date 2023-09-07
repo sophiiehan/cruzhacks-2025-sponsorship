@@ -8,6 +8,7 @@ import Home from "./views/Home/index.view"
 import BGwrapper from "./components/BGwrapper"
 
 import "./App.scss"
+import Team from "./views/Team/index.view"
 
 const App: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const App: React.FC = () => {
             <NavBar />
             <Routes>
               <Route path='/' element={BGwrapper(Home)} />
-              <Route path='/team' element={BGwrapper(Home)} />
+              <Route path='/team' element={BGwrapper(Team)} />
             </Routes>
             <Footer />
           </>

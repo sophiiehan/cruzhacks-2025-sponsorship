@@ -14,7 +14,7 @@ const QaBlurb: React.FC<QaBlurbProps> = (props: QaBlurbProps) => {
   const [open, setOpen] = useState(false)
 
   return (
-    <button
+    <div
       className='qablurb__container'
       onClick={() => setOpen(!open)}
       onKeyDown={() => setOpen(!open)}
@@ -34,7 +34,7 @@ const QaBlurb: React.FC<QaBlurbProps> = (props: QaBlurbProps) => {
         </div>
         <p className={open ? "" : "closed"}>{children}</p>
       </div>
-    </button>
+    </div>
   )
 }
 

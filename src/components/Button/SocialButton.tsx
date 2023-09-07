@@ -5,12 +5,12 @@ import "./SocialButton.scss"
 export const SocialButton: React.FC<SocialButtonProps> = props => {
   return (
     <button
-      className='Button'
+      className='social_button'
       onClick={() => {
         window.open(props.link)
       }}
     >
-      <props.logo className='Button--svg' />
+      <props.logo className='social_button--svg' />
     </button>
   )
 }

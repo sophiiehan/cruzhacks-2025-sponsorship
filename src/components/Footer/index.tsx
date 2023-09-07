@@ -1,32 +1,25 @@
 import React from "react"
 import { useTheme } from "../../contexts/ThemeContext/ThemeContext"
-
-import "./index.scss"
 import {
   SocialButtonInputs,
   SocialButtonProps,
 } from "../../Props/Socials/props"
+import { ReactComponent as LandDark } from "../../assets/LandDark.svg"
+import { ReactComponent as LandLight } from "../../assets/LandLight.svg"
 import { SocialButton } from "../Button/SocialButton"
+
+import "./index.scss"
 
 const Footer: React.FC = () => {
   const { theme } = useTheme()
 
-  const illustrationFooterImg = new URL(
-    `./illustration_footer-${theme.mode}.svg`,
-    import.meta.url,
-  )
+  const Illustration = theme.mode === "dark" ? LandDark : LandLight
 
   const whiteLogoImg = new URL("./logo_2022-white.svg", import.meta.url)
 
   return (
     <>
-      {theme.mode !== "portal" && (
-        <img
-          className='footer__image'
-          src={illustrationFooterImg.origin}
-          alt=''
-        />
-      )}
+      <Illustration className='footer__image' />
       <footer className='footer' id='footer'>
         <div className='footer__container'>
           <div className='footer__container--left'>
