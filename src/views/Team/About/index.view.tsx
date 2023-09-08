@@ -1,5 +1,5 @@
 import React from "react"
-import Logo from "../../../assets/LogowStars.svg"
+import Logo from "../../../assets/icons/LogowStars.svg"
 import "./index.scss"
 
 const About: React.FC = () => {

@@ -1,6 +1,6 @@
 import React from "react"
-import { ReactComponent as CloudDark } from "../../../assets/CloudDark.svg"
-import { ReactComponent as CloudLight } from "../../../assets/CloudLight.svg"
+import { ReactComponent as CloudDark } from "../../../assets/decorative/CloudDark.svg"
+import { ReactComponent as CloudLight } from "../../../assets/decorative/CloudLight.svg"
 import { useTheme } from "../../../contexts/ThemeContext/ThemeContext"
 import "./index.scss"
 

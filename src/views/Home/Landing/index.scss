@@ -451,6 +451,10 @@
   gap: 0.5em;
   display: inline-flex;
   align-items: center;
+
+  &-icon {
+    width: 1.5em;
+  }
 }
 
 .location {
@@ -469,6 +473,10 @@
   gap: 0.25em;
   display: flex;
   align-items: center;
+
+  &-icon {
+    width: 1.5em;
+  }
 }
 
 .MyPortal__container {

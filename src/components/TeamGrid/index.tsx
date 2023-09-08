@@ -1,8 +1,9 @@
 import React from "react"
 import { MemberProps } from "../../Props/props"
-import "./index.scss"
 import members from "../../Props/memberProps/members"
-import LiLogo from "../../assets/fancylinkedin.svg"
+import LiLogo from "../../assets/icons/fancylinkedin.svg"
+
+import "./index.scss"
 
 const MemberCard: React.FC<MemberProps> = ({
   name,

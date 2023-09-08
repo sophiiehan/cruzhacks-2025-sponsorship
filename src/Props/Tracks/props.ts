@@ -1,12 +1,12 @@
 import React, { SVGProps } from "react"
-import { ReactComponent as Beginner } from "../../assets/Beginner.svg"
-import { ReactComponent as Healthcare } from "../../assets/Healthcare.svg"
-import { ReactComponent as Justice } from "../../assets/Justice.svg"
-import { ReactComponent as Sustainability } from "../../assets/Sustainability.svg"
-import { ReactComponent as UIUX } from "../../assets/UXIcon.svg"
-import { ReactComponent as Fintech } from "../../assets/Fintech.svg"
-import { ReactComponent as NewTech } from "../../assets/NewTech.svg"
-import { ReactComponent as Slug } from "../../assets/Slug.svg"
+import { ReactComponent as Beginner } from "../../assets/tracks/Beginner.svg"
+import { ReactComponent as Healthcare } from "../../assets/tracks/Healthcare.svg"
+import { ReactComponent as Justice } from "../../assets/tracks/Justice.svg"
+import { ReactComponent as Sustainability } from "../../assets/tracks/Sustainability.svg"
+import { ReactComponent as UIUX } from "../../assets/tracks/UXIcon.svg"
+import { ReactComponent as Fintech } from "../../assets/tracks/Fintech.svg"
+import { ReactComponent as NewTech } from "../../assets/tracks/NewTech.svg"
+import { ReactComponent as Slug } from "../../assets/tracks/Slug.svg"
 export interface PrizeTrackProps {
   logo: React.FunctionComponent<SVGProps<SVGSVGElement>>
   title: string

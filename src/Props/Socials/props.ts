@@ -1,9 +1,9 @@
-import { ReactComponent as Instagram } from "../../assets/Instagram.svg"
-import { ReactComponent as Facebook } from "../../assets/Facebook.svg"
-import { ReactComponent as LinkedIn } from "../../assets/Linkedin.svg"
-import { ReactComponent as Twitter } from "../../assets/Twitter.svg"
-import { ReactComponent as Discord } from "../../assets/Discord.svg"
-import { ReactComponent as Mail } from "../../assets/Mail.svg"
+import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg"
+import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg"
+import { ReactComponent as LinkedIn } from "../../assets/icons/Linkedin.svg"
+import { ReactComponent as Twitter } from "../../assets/icons/Twitter.svg"
+import { ReactComponent as Discord } from "../../assets/icons/Discord.svg"
+import { ReactComponent as Mail } from "../../assets/icons/Mail.svg"
 
 export interface SocialButtonProps {
   logo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>

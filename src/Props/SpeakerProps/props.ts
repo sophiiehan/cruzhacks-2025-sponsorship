@@ -1,11 +1,11 @@
 import { SpeakerData } from "../../components/SpeakerCard/SpeakerCard"
-import MichealLopp from "../../assets/SpeakerImages/MichaelLopp.jpg"
-import RaghavJandhyala from "../../assets/SpeakerImages/RaghavJandhyala.jpg"
-import NadaMilkovic from "../../assets/SpeakerImages/NadaMilkovic.jpg"
-import GregorVebleMikie from "../../assets/SpeakerImages/GregorVebleMikie.jpg"
-import BrentHaddad from "../../assets/SpeakerImages/BrentHaddad.jpg"
-import AlexanderWolf from "../../assets/SpeakerImages/AlexanderWolf.jpg"
-import MarkAdams from "../../assets/SpeakerImages/MarkAdams.jpg"
+import MichealLopp from "../../assets/speakers/MichaelLopp.jpg"
+import RaghavJandhyala from "../../assets/speakers/RaghavJandhyala.jpg"
+import NadaMilkovic from "../../assets/speakers/NadaMilkovic.jpg"
+import GregorVebleMikie from "../../assets/speakers/GregorVebleMikie.jpg"
+import BrentHaddad from "../../assets/speakers/BrentHaddad.jpg"
+import AlexanderWolf from "../../assets/speakers/AlexanderWolf.jpg"
+import MarkAdams from "../../assets/speakers/MarkAdams.jpg"
 
 const SpeakerProps: Array<SpeakerData> = [
   {

@@ -1,18 +1,18 @@
 import React, { useState } from "react"
 import { subscribeMailchimp } from "../../../utils/api"
 import { validateEmail } from "../../../utils/validate"
-import "./index.scss"
-import { ReactComponent as Moon } from "../../../assets/Moon.svg"
-import { ReactComponent as Sun } from "../../../assets/Sun.svg"
-import { ReactComponent as Arrow } from "../../../assets/Arrow.svg"
+import { ReactComponent as Moon } from "../../../assets/decorative/Moon.svg"
+import { ReactComponent as Sun } from "../../../assets/decorative/Sun.svg"
+import { ReactComponent as Arrow } from "../../../assets/icons/Arrow.svg"
 import { SocialButton } from "../../../components/Button/SocialButton"
+import { CalendarDaysIcon, MapPinIcon } from "@heroicons/react/24/outline"
 import {
   SocialButtonInputs,
   SocialButtonProps,
 } from "../../../Props/Socials/props"
 import { useTheme } from "../../../contexts/ThemeContext/ThemeContext"
-import { useNavigate } from "react-router"
-import { CalendarDaysIcon, MapPinIcon } from "@heroicons/react/24/outline"
+
+import "./index.scss"
 
 const SubmissionStates = {
   NotSubmitted: 0,
@@ -26,14 +26,9 @@ const Landing: React.FC = () => {
   const [state, setState] = useState<number>(0)
   const [message, setMessage] = useState<string>("")
   const { theme } = useTheme()
-  // const [sponsorEmailVisible, setSponsorEmailVisible] = useState<boolean>(false)
-  const navigate = useNavigate()
+
   const isLightClass = () => (theme.mode === "light" ? "--light" : "")
 
-  // const showSponsorEmailCopiedMsg = () => {
-  //   setSponsorEmailVisible(true)
-  //   setTimeout(() => setSponsorEmailVisible(false), 5000)
-  // }
   const handleSubmit = () => {
     if (!validateEmail(email)) {
       setState(SubmissionStates.Errored)
@@ -55,6 +50,7 @@ const Landing: React.FC = () => {
       }
     })
   }
+
   return (
     <div className='landing'>
       <div className='landing__badge'>
@@ -80,11 +76,11 @@ const Landing: React.FC = () => {
         </div>
         <div className='more-info'>
           <div className='date'>
-            <CalendarDaysIcon />
+            <CalendarDaysIcon className='date-icon' />
             February 3-5, 2023
           </div>
           <div className='location'>
-            <MapPinIcon />
+            <MapPinIcon className='location-icon' />
             Stevenson Event Center @ UC Santa Cruz
           </div>
         </div>
@@ -108,31 +104,7 @@ const Landing: React.FC = () => {
               </div>
             </div>
           </div>
-
-          <div className='landing__container--inputs__row2'>
-            <button
-              className={`landing__container--inputs__row2--button1${isLightClass()}`}
-              onClick={() => navigate("/myPortal")}
-            >
-              Portal
-            </button>
-            <button
-              className={`landing__container--inputs__row2--button2${isLightClass()}`}
-              onClick={() => alert("Applications are not open yet!")}
-            >
-              Apply
-            </button>
-          </div>
         </div>
-        {/* <div className='MyPortal__container'>
-          <button
-            // eslint-disable-next-line max-len
-            className={`MyPortal`}
-            onClick={() => navigate("/redirect")}
-          >
-            Portal
-          </button>
-        </div> */}
         {message && (
           <div
             className={
@@ -142,13 +114,6 @@ const Landing: React.FC = () => {
             {message}
           </div>
         )}
-        {/*<div
-          className={`landing__container__email-copied-msg${
-            sponsorEmailVisible ? "--visible" : ""
-          }`}
-        >
-          Sponsor Email Copied!
-        </div>*/}
       </div>
 
       <div className='landing__socials-mobile'>

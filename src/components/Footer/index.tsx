@@ -4,8 +4,8 @@ import {
   SocialButtonInputs,
   SocialButtonProps,
 } from "../../Props/Socials/props"
-import { ReactComponent as LandDark } from "../../assets/LandDark.svg"
-import { ReactComponent as LandLight } from "../../assets/LandLight.svg"
+import { ReactComponent as LandDark } from "../../assets/decorative/LandDark.svg"
+import { ReactComponent as LandLight } from "../../assets/decorative/LandLight.svg"
 import { SocialButton } from "../Button/SocialButton"
 
 import "./index.scss"

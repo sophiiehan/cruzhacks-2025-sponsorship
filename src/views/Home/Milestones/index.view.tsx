@@ -1,6 +1,6 @@
 import React from "react"
 import { nanoid } from "nanoid"
-import { ReactComponent as Nodes } from "../../../assets/Nodes.svg"
+import { ReactComponent as Nodes } from "../../../assets/decorative/Nodes.svg"
 import "./index.scss"
 
 interface Stat {

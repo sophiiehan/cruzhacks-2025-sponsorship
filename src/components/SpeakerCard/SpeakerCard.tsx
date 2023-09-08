@@ -1,5 +1,6 @@
-import { ReactComponent as LinkedIn } from "../../assets/Linkedin.svg"
 import React from "react"
+import { ReactComponent as LinkedIn } from "../../assets/icons/Linkedin.svg"
+
 import "./SpeakerCard.scss"
 
 export interface SpeakerData {
