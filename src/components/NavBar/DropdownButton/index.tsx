@@ -8,7 +8,7 @@ interface DropdownButtonProps {
 }
 
 const DropdownButton: React.FC<DropdownButtonProps> = (
-  props: DropdownButtonProps
+  props: DropdownButtonProps,
 ) => {
   const { onClick, checked } = props
 

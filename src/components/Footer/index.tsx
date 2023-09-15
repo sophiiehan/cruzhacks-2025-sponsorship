@@ -1,12 +1,14 @@
 import React from "react"
 import { useTheme } from "../../contexts/ThemeContext/ThemeContext"
-import {
-  SocialButtonInputs,
-  SocialButtonProps,
-} from "../../Props/Socials/props"
 import { ReactComponent as LandDark } from "../../assets/decorative/LandDark.svg"
 import { ReactComponent as LandLight } from "../../assets/decorative/LandLight.svg"
-import { SocialButton } from "../Button/SocialButton"
+
+import { ReactComponent as Logo2022 } from "../../assets/icons/2022.svg"
+import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg"
+import { ReactComponent as Twitter } from "../../assets/icons/Twitter.svg"
+import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg"
+import { ReactComponent as LinkedIn } from "../../assets/icons/LinkedIn.svg"
+import { ReactComponent as Mail } from "../../assets/icons/Mail.svg"
 
 import "./index.scss"
 
@@ -14,8 +16,6 @@ const Footer: React.FC = () => {
   const { theme } = useTheme()
 
   const Illustration = theme.mode === "dark" ? LandDark : LandLight
-
-  const whiteLogoImg = new URL("./logo_2022-white.svg", import.meta.url)
 
   return (
     <>
@@ -55,12 +55,48 @@ const Footer: React.FC = () => {
               href='https://2022.cruzhacks.com/'
               className='footer__container--right--socials'
             >
-              <img src={whiteLogoImg.origin} alt='CruzHacks 2022 Site' />
+              <Logo2022 />
             </a>
-
-            {SocialButtonInputs.map(({ logo, link }: SocialButtonProps) => (
-              <SocialButton logo={logo} link={link} key={link} />
-            ))}
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.instagram.com/cruzhacks/?hl=en'
+              className='footer__container--right--socials'
+            >
+              <Instagram />
+            </a>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.facebook.com/CruzHacks/'
+              className='footer__container--right--socials'
+            >
+              <Facebook />
+            </a>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.linkedin.com/company/cruzhacks'
+              className='footer__container--right--socials'
+            >
+              <LinkedIn />
+            </a>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='mailto:contact@cruzhacks.com'
+              className='footer__container--right--socials'
+            >
+              <Mail />
+            </a>
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://twitter.com/CruzHacks'
+              className='footer__container--right--socials'
+            >
+              <Twitter />
+            </a>
           </div>
         </div>
       </footer>

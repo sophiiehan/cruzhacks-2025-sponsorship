@@ -18,6 +18,7 @@ const QaBlurb: React.FC<QaBlurbProps> = (props: QaBlurbProps) => {
       className='qablurb__container'
       onClick={() => setOpen(!open)}
       onKeyDown={() => setOpen(!open)}
+      role='presentation'
     >
       <img
         className='qablurb__container--star'
