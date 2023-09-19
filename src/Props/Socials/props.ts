@@ -1,6 +1,6 @@
 import { ReactComponent as Instagram } from "../../assets/icons/Instagram.svg"
 import { ReactComponent as Facebook } from "../../assets/icons/Facebook.svg"
-import { ReactComponent as LinkedIn } from "../../assets/icons/Linkedin.svg"
+import { ReactComponent as LinkedIn } from "../../assets/icons/LinkedIn.svg"
 import { ReactComponent as Twitter } from "../../assets/icons/Twitter.svg"
 import { ReactComponent as Discord } from "../../assets/icons/Discord.svg"
 import { ReactComponent as Mail } from "../../assets/icons/Mail.svg"

@@ -1,7 +1,7 @@
 import React from "react"
 import { MemberProps } from "../../Props/props"
 import members from "../../Props/memberProps/members"
-import LiLogo from "../../assets/icons/fancylinkedin.svg"
+import LiLogo from "../../assets/icons/LinkedIn-fancy.svg"
 
 import "./index.scss"
 

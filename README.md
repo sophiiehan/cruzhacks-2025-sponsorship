@@ -1,5 +1,9 @@
 CruzHacks 2024 sponorship site is built with React, Typescript, bun and hosted with firebase.
 
+# Install Tooling
+
+- [Bun](https://bun.sh/docs/installation#macos-and-linux) (I recommend to install through Homebrew if on Mac, but through NPM or CURL also works)
+
 # How to Run
 
 1. Clone this repository

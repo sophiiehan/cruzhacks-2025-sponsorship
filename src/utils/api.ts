@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios"
-import { NotificationProps } from "../Props/props"
 
 const RECAPTCHA_VERIFICATION_ENDPOINT =
   `${import.meta.env.VITE_ENDPOINT_URL}/verifyRecaptcha/submit` || ""
@@ -9,11 +8,6 @@ const RESEND_VERIFICATION_EMAIL_ENDPOINT =
 
 const SUBSCRIBE_ENDPOINT =
   `${import.meta.env.VITE_ENDPOINT_URL}/subscribe` || ""
-
-const METADATA_ENDPOINT =
-  `${import.meta.env.VITE_ENDPOINT_URL}/auth/metadata` || ""
-
-const LIVE_NOTIFY_ENDPOINT = `${import.meta.env.VITE_ENDPOINT_URL}/notify` || ""
 
 const API_KEY = import.meta.env.VITE_API_KEY || ""
 
@@ -76,47 +70,5 @@ export function verifyRecaptchaToken(res: string | null, callback: any) {
       }
       return response
     }) // after response 200, token validated: unlock verification button
-    .catch((err: ErrorCallback) => err)
-}
-
-export function updateUserTheme(theme: string, authToken: string) {
-  const axiosConfig: AxiosRequestConfig = {
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-    },
-  }
-  const body = {
-    theme,
-  }
-  return axios
-    .patch(METADATA_ENDPOINT, body, axiosConfig)
-    .then((res: AxiosResponse) => res)
-    .catch((err: ErrorCallback) => err)
-}
-
-export function getUserTheme(authToken: string) {
-  const axiosConfig: AxiosRequestConfig = {
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-    },
-  }
-  return axios
-    .get(METADATA_ENDPOINT, axiosConfig)
-    .then((res: AxiosResponse) => res)
-    .catch((err: ErrorCallback) => err)
-}
-
-export function createAnnouncement(
-  message: NotificationProps,
-  authToken: string,
-) {
-  const axiosConfig: AxiosRequestConfig = {
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-    },
-  }
-  return axios
-    .post(`${LIVE_NOTIFY_ENDPOINT}/send`, message, axiosConfig)
-    .then((res: AxiosResponse) => res)
     .catch((err: ErrorCallback) => err)
 }

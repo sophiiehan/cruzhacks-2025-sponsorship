@@ -96,13 +96,13 @@ const members: MemberProps[] = [
     name: "Zachary Traczyk",
     title: "Engineering",
     image: images.zTraczyk,
-    LinkedInLink: "https://www.linkedin.com/in/zachary-traczyk-140b541b2",
+    LinkedInLink: "https://www.linkedin.com/in/zack-traczyk",
   },
   {
     name: "Devan O'Boyle",
     title: "Engineering",
     image: images.dOBoyle,
-    LinkedInLink: "http://www.linkedin.com/in/devanoboyle",
+    LinkedInLink: "https://www.linkedin.com/in/devanoboyle",
   },
   {
     name: "Sean Kim",

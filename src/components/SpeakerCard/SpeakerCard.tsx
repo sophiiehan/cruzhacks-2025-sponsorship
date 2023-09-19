@@ -1,5 +1,5 @@
 import React from "react"
-import { ReactComponent as LinkedIn } from "../../assets/icons/Linkedin.svg"
+import { ReactComponent as LinkedIn } from "../../assets/icons/LinkedIn.svg"
 
 import "./SpeakerCard.scss"
 

@@ -1,0 +1,51 @@
+name: Deploy to Firebase Hosting on PR
+"on": pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Install Dependencies
+        run: bun install
+      - name: Create Production Build
+        run: bun run build
+      - name: Archive Production Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: preview
+          path: dist
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Install Dependencies
+        run: bun install
+      - name: Lint Typescript
+        run: bun lint
+
+  deploy_preview:
+    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+    needs: [build, lint]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: preview
+          path: dist
+      - name: Deploy to Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2024_SPONSORSHIP }}"
+          projectId: cruzhacks-2024-sponsorship
