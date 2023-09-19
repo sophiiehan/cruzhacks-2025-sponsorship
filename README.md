@@ -9,7 +9,7 @@ CruzHacks 2024 sponorship site is built with React, Typescript, bun and hosted w
 # Available Scripts
 
 - `bun dev` starts a development server
-- `bun build` creates a production build
+- `bun run build` creates a production build
 - `bun preview` preview the production build
 - `bun lint` runs the linter for all typescript files
 - `bun format` runs the prettier formatter for all typescript files
