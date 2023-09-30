@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { ReactComponent as Moon } from "../../../assets/decorative/Moon.svg"
 import { ReactComponent as Sun } from "../../../assets/decorative/Sun.svg"
 import { SocialButton } from "../../../components/Button/SocialButton"
@@ -10,9 +10,46 @@ import {
 import { useTheme } from "../../../contexts/ThemeContext/ThemeContext"
 
 import "./index.scss"
+import { validateEmail } from "../../../utils/validate"
+import { subscribeMailchimp } from "../../../utils/api"
+import { ArrowRightIcon } from "@heroicons/react/20/solid"
+
+const SubmissionStates = {
+  NotSubmitted: 0,
+  Loading: 1,
+  Submitted: 2,
+  Errored: 3,
+}
 
 const Landing: React.FC = () => {
+  const [email, setEmail] = useState<string>("")
+  const [submissionState, setSubmissionState] = useState<number>(0)
+  const [message, setMessage] = useState<string>("")
   const { theme } = useTheme()
+
+  const isLightClass = () => (theme.mode === "light" ? "--light" : "")
+
+  const handleSubmit = () => {
+    if (!validateEmail(email)) {
+      setSubmissionState(SubmissionStates.Errored)
+      setMessage("Please enter a valid email address.")
+      return
+    }
+    setSubmissionState(SubmissionStates.Loading)
+    setMessage("Submitting...")
+    subscribeMailchimp(email).then(res => {
+      if (res.status === 200 || res.status === 201) {
+        setSubmissionState(SubmissionStates.Submitted)
+        setMessage(res.data.message)
+      } else {
+        setSubmissionState(SubmissionStates.Errored)
+        setMessage(
+          "Oh no! We've got an error— please try your request again & contact" +
+            " us at dev@cruzhacks.com if this persists!",
+        )
+      }
+    })
+  }
 
   return (
     <div className='landing'>
@@ -47,7 +84,59 @@ const Landing: React.FC = () => {
             Stevenson Event Center @ UC Santa Cruz
           </div>
         </div>
-        <div className='landing__container--inputs'></div>
+        <div className='landing__container--inputs'>
+          <div className='landing__container--inputs__row-container'>
+            <div className='landing__container--inputs__row-container__row1'>
+              <input
+                className='landing__container--inputs__row-container__row1--email-input'
+                onChange={e => setEmail(e.target.value)}
+                placeholder='Enter email for updates'
+              ></input>
+              <div
+                className={`landing__container--inputs__row-container__row1__arrow-container`}
+              >
+                <button
+                  className={`landing__container--inputs__row-container__row1__arrow-container--arrow${isLightClass()}`}
+                  onClick={() => handleSubmit()}
+                >
+                  <ArrowRightIcon className='arrow-icon' />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className='landing__container--inputs__row2'>
+            <button
+              className={`landing__container--inputs__row2--button1${isLightClass()}`}
+              onClick={() =>
+                window.open("https://cruzhacks-2023.devpost.com/", "_blank")
+              }
+            >
+              Devpost
+            </button>
+            <button
+              className={`landing__container--inputs__row2--button2${isLightClass()}`}
+              onClick={() =>
+                window.open(
+                  "https://photos.app.goo.gl/LcwPB1kW2ZAt9UcH6",
+                  "_blank",
+                )
+              }
+            >
+              Photo Album
+            </button>
+          </div>
+        </div>
+        {message && (
+          <div
+            className={
+              "landing__container--res" +
+              (submissionState === 3 ? "__error" : "")
+            }
+          >
+            {message}
+          </div>
+        )}
       </div>
 
       <div className='landing__socials-mobile'>
