@@ -1,19 +1,15 @@
 CruzHacks 2024 sponorship site is built with React, Typescript, bun and hosted with firebase.
 
-# Install Tooling
-
-- [Bun](https://bun.sh/docs/installation#macos-and-linux) (I recommend to install through Homebrew if on Mac, but through NPM or CURL also works)
-
 # How to Run
 
 1. Clone this repository
-2. Navigate to the root of the repository and run `bun install` which will install all the dependencies
+2. Navigate to the root of the repository and run `yarn install` which will install all the dependencies
 3. Running `bun dev` will begin a development server
 
 # Available Scripts
 
-- `bun dev` starts a development server
-- `bun run build` creates a production build
-- `bun preview` preview the production build
-- `bun lint` runs the linter for all typescript files
-- `bun format` runs the prettier formatter for all typescript files
+- `yarn dev` starts a development server
+- `yarn build` creates a production build
+- `yarn preview` preview the production build
+- `yarn lint` runs the linter for all typescript files
+- `yarn format` runs the prettier formatter for all typescript files

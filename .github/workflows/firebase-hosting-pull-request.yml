@@ -5,14 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup bun
-        uses: oven-sh/setup-bun@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
         with:
-          bun-version: latest
+          node-version: 16
       - name: Install Dependencies
-        run: bun install
+        run: yarn install --frozen-lockfile
       - name: Create Production Build
-        run: bun run build
+        run: yarn build
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v2
         with:
@@ -23,14 +23,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Setup bun
-        uses: oven-sh/setup-bun@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
         with:
-          bun-version: latest
+          node-version: 16
       - name: Install Dependencies
-        run: bun install
-      - name: Lint Typescript
-        run: bun lint
+        run: yarn install --frozen-lockfile
+      - name: Lint
+        run: yarn lint
 
   deploy_preview:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
