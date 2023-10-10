@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "cruzhacks-2024-sponsorship"
+    "default": "cruzhacks-4a899"
+  },
+  "targets": {
+    "cruzhacks-4a899": {
+      "hosting": {
+        "sponsorship-website": [
+          "cruzhacks-2024-sponsorship-website"
+        ]
+      }
+    }
   }
 }
