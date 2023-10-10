@@ -49,6 +49,6 @@ jobs:
         with:
           target: sponsorship-website
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_2024_SPONSORSHIP }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_4A899 }}"
           channelId: live
           projectId: cruzhacks-4a899
