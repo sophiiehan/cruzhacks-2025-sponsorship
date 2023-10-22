@@ -24,7 +24,13 @@ const About: React.FC = () => {
             participants.
           </div>
           <div className='about__container--sponsor'>
-            <a href='mailto:sponsor@cruzhacks.com'>Sponsor Us</a>
+            <a
+              href='https://docs.google.com/forms/d/e/1FAIpQLSeS9OmogTXhPD5yOoYAYuKbrBeseHIj3ePQIYbcLQy2lLUBaA/viewform?usp=sf_link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Sponsor Us
+            </a>
           </div>
         </div>
       </div>
