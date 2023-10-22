@@ -68,16 +68,16 @@ const Landing: React.FC = () => {
         </div>
       </div>
       <div className='landing__container'>
-        <div className='landing__container--title'>CRUZHACKS 2023</div>
+        <div className='landing__container--title'>CRUZHACKS 2024</div>
         <div className='landing__container--blurb'>
-          CruzHacks is the largest hackathon in Santa Cruz. Each year, we invite
-          hundreds of students to develop solutions to real-world problems,
-          pursue inclusion in tech, and kindle the spirit of innovation.
+          CruzHacks is a non-profit, student-run annual hackathon at UC Santa
+          Cruz. As one of the largest collegiate hackathons in the Bay Area, we
+          welcome hundreds of students every year.
         </div>
         <div className='more-info'>
           <div className='date'>
             <CalendarDaysIcon className='date-icon' />
-            February 3-5, 2023
+            January 11-14, 2024
           </div>
           <div className='location'>
             <MapPinIcon className='location-icon' />
@@ -109,10 +109,13 @@ const Landing: React.FC = () => {
             <button
               className={`landing__container--inputs__row2--button1${isLightClass()}`}
               onClick={() =>
-                window.open("https://cruzhacks-2023.devpost.com/", "_blank")
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLSeS9OmogTXhPD5yOoYAYuKbrBeseHIj3ePQIYbcLQy2lLUBaA/viewform?usp=sf_link",
+                  "_blank",
+                )
               }
             >
-              Devpost
+              Sponsor Us
             </button>
             <button
               className={`landing__container--inputs__row2--button2${isLightClass()}`}
