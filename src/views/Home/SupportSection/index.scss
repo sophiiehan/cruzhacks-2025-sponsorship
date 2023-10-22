@@ -12,6 +12,10 @@
     align-items: center;
     gap: 1.5em;
 
+    button:hover {
+      cursor: pointer;
+    }
+
     &--SupportContainer--title, &--SponsorContainer--title {
         font-family: $inter;
         font-weight: 600;

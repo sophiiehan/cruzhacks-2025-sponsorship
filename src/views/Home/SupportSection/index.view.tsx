@@ -54,7 +54,10 @@ const SupportSection: React.FC = () => (
         CruzHacks will benefit you!
       </div>
       <div className='SupportSection__container--SponsorContainer--button'>
-        <button type='button' className='ConnectButton'>
+        <button type='button' className='ConnectButton'
+          onClick={() =>
+            window.open("https://docs.google.com/forms/d/e/1FAIpQLSeS9OmogTXhPD5yOoYAYuKbrBeseHIj3ePQIYbcLQy2lLUBaA/viewform?usp=sf_link", "_blank")
+          }>
           Connect here
         </button>
       </div>
