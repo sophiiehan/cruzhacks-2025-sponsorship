@@ -2,8 +2,8 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  VITE_API_KEY: string
-  VITE_ENDPOINT_URL: string
+  VITE_CRUZHACKS_API_KEY: string
+  VITE_CRUZHACKS_ENDPOINT_URL: string
 }
 
 interface ImportMeta {

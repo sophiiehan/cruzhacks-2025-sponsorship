@@ -38,10 +38,18 @@ const Landing: React.FC = () => {
     setSubmissionState(SubmissionStates.Loading)
     setMessage("Submitting...")
     subscribeMailchimp(email).then(res => {
+      console.log(res)
       if (res.status === 200 || res.status === 201) {
         setSubmissionState(SubmissionStates.Submitted)
         setMessage(res.data.message)
       } else {
+        const axiosError = res.data
+        if (axiosError.response?.data?.status == 403) {
+          setSubmissionState(SubmissionStates.Submitted)
+          setMessage("You have already Subscribed!")
+          return
+        }
+
         setSubmissionState(SubmissionStates.Errored)
         setMessage(
           "Oh no! We've got an error— please try your request again & contact" +

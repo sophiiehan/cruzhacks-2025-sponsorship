@@ -1,74 +1,33 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios"
-
-const RECAPTCHA_VERIFICATION_ENDPOINT =
-  `${import.meta.env.VITE_ENDPOINT_URL}/verifyRecaptcha/submit` || ""
-
-const RESEND_VERIFICATION_EMAIL_ENDPOINT =
-  `${import.meta.env.VITE_ENDPOINT_URL}/auth/resend` || ""
+import axios, { AxiosRequestConfig } from "axios"
 
 const SUBSCRIBE_ENDPOINT =
-  `${import.meta.env.VITE_ENDPOINT_URL}/subscribe` || ""
+  `${import.meta.env.VITE_CRUZHACKS_ENDPOINT_URL}/email/subscribe` || ""
 
-const API_KEY = import.meta.env.VITE_API_KEY || ""
+const API_KEY = import.meta.env.VITE_CRUZHACKS_API_KEY || ""
 
-export function resendVerificationEmail(
-  userId: string | undefined,
-  authToken: string,
-) {
-  const axiosConfig: AxiosRequestConfig = {
-    headers: {
-      Authorization: `Bearer ${authToken}`,
-    },
-  }
-  const body = {
-    userId,
-  }
-  return axios
-    .post(RESEND_VERIFICATION_EMAIL_ENDPOINT, body, axiosConfig)
-    .then((res: AxiosResponse) => res)
-    .catch((err: ErrorCallback) => err)
+type SubscribeResponse = {
+  status: number
+  message: string
 }
 
 export function subscribeMailchimp(userEmail: string) {
   const axiosConfig: AxiosRequestConfig = {
     headers: {
       Authentication: API_KEY,
-      "Content-Type": "application/json",
+    },
+    params: {
+      email: userEmail,
     },
   }
 
   return axios
-    .post(
-      SUBSCRIBE_ENDPOINT,
-      {
-        email: userEmail,
-      },
-      axiosConfig,
-    )
-    .then((response: AxiosResponse) => ({
+    .post<SubscribeResponse>(SUBSCRIBE_ENDPOINT, null, axiosConfig)
+    .then(response => ({
       status: response.status,
       data: response.data,
     }))
-    .catch((err: ErrorCallback) => ({
+    .catch(err => ({
       status: null,
       data: err,
     }))
-}
-
-export function verifyRecaptchaToken(res: string | null, callback: any) {
-  const axiosConfig: AxiosRequestConfig = {
-    headers: {
-      Authentication: API_KEY || "",
-      token: res || "",
-    },
-  }
-  axios
-    .post(RECAPTCHA_VERIFICATION_ENDPOINT, {}, axiosConfig)
-    .then((response: AxiosResponse) => {
-      if (response.status === 200) {
-        return callback()
-      }
-      return response
-    }) // after response 200, token validated: unlock verification button
-    .catch((err: ErrorCallback) => err)
 }
