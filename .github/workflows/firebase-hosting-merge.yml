@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_CRUZHACKS_API_KEY: "${{ secrets.CRUZHACKS_API_KEY }}"
+      VITE_CRUZHACKS_ENDPOINT_URL: "${{ secrets.CRUZHACKS_ENDPOINT_URL }}"
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node.js
