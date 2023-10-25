@@ -3,6 +3,8 @@ name: Deploy to Firebase Hosting on PR
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      VITE_CRUZHACKS_API_KEY: "${{ secrets.CRUZHACKS_API_KEY }}"
     steps:
       - uses: actions/checkout@v3
       - name: Setup Node.js
@@ -12,9 +14,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
       - name: Create Production Build
-        env:
-          VITE_CRUZHACKS_API_KEY: "${{ secrets.CRUZHACKS_API_KEY }}"
-          VITE_CRUZHACKS_ENDPOINT_URL: "${{ env.CRUZHACKS_ENDPOINT_URL }}"
         run: yarn build
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v2
