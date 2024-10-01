@@ -1,4 +1,5 @@
 import React from "react"
+
 import { ReactComponent as Instagram } from "../../../assets/icons/Instagram.svg"
 import { ReactComponent as Facebook } from "../../../assets/icons/Facebook.svg"
 import { ReactComponent as LinkedIn } from "../../../assets/icons/LinkedIn.svg"

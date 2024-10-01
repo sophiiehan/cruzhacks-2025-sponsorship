@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "sponsorship-website",
+    "site": "cruzhacks-2025-sponsorship",
     "public": "dist",
     "ignore": [
       "firebase.json",
