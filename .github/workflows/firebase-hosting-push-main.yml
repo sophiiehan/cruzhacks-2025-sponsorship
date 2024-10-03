@@ -1,7 +1,6 @@
 name: Deploy to Firebase
 
 on:
-  pull_request:
   push:
     branches:
       - development
