@@ -9,7 +9,7 @@ export const PreviousHackathonProps: Array<PreviousHackathonData> = [
   //   link: "https://2023.cruzhacks.com",
   // },
   {
-    name: "CruzHacks 2022",
+    name: "CruzHacks 2023",
     link: "https://2022.cruzhacks.com",
   },
   {
