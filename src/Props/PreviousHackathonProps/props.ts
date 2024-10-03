@@ -4,12 +4,12 @@ export interface PreviousHackathonData {
 }
 
 export const PreviousHackathonProps: Array<PreviousHackathonData> = [
+  // {
+  //   name: "CruzHacks 2023",
+  //   link: "https://2023.cruzhacks.com",
+  // },
   {
     name: "CruzHacks 2023",
-    link: "https://2023.cruzhacks.com",
-  },
-  {
-    name: "CruzHacks 2022",
     link: "https://2022.cruzhacks.com",
   },
   {
