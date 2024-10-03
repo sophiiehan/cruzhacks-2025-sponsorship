@@ -76,7 +76,7 @@ const Landing: React.FC = () => {
         </div>
       </div>
       <div className='landing__container'>
-        <div className='landing__container--title'>CRUZHACKS 2024</div>
+        <div className='landing__container--title'>CRUZHACKS 2025</div>
         <div className='landing__container--blurb'>
           CruzHacks is a non-profit, student-run annual hackathon at UC Santa
           Cruz. As one of the largest collegiate hackathons in the Bay Area, we
@@ -85,7 +85,7 @@ const Landing: React.FC = () => {
         <div className='more-info'>
           <div className='date'>
             <CalendarDaysIcon className='date-icon' />
-            January 12-14, 2024
+            January 25-27, 2025
           </div>
           <div className='location'>
             <MapPinIcon className='location-icon' />
@@ -125,7 +125,7 @@ const Landing: React.FC = () => {
             >
               Sponsor Us
             </button>
-            <button
+            {/* <button
               className={`landing__container--inputs__row2--button2${isLightClass()}`}
               onClick={() =>
                 window.open(
@@ -135,7 +135,7 @@ const Landing: React.FC = () => {
               }
             >
               Photo Album
-            </button>
+            </button> */}
           </div>
         </div>
         {message && (
