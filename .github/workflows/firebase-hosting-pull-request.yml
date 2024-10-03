@@ -1,55 +1,55 @@
-name: Deploy to Firebase Hosting on PR
-"on": pull_request
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      VITE_CRUZHACKS_API_KEY: "${{ secrets.CRUZHACKS_API_KEY }}"
-      VITE_CRUZHACKS_ENDPOINT_URL: "${{ secrets.CRUZHACKS_ENDPOINT_URL }}"
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-      - name: Create Production Build
-        run: yarn build
-      - name: Archive Production Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: preview
-          path: dist
+# name: Deploy to Firebase Hosting on PR
+# "on": pull_request
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     env:
+#       VITE_CRUZHACKS_API_KEY: "${{ secrets.CRUZHACKS_API_KEY }}"
+#       VITE_CRUZHACKS_ENDPOINT_URL: "${{ secrets.CRUZHACKS_ENDPOINT_URL }}"
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: 16
+#       - name: Install Dependencies
+#         run: yarn install --frozen-lockfile
+#       - name: Create Production Build
+#         run: yarn build
+#       - name: Archive Production Artifact
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: preview
+#           path: dist
 
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - name: Install Dependencies
-        run: yarn install --frozen-lockfile
-      - name: Lint
-        run: yarn lint
+#   lint:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: 16
+#       - name: Install Dependencies
+#         run: yarn install --frozen-lockfile
+#       - name: Lint
+#         run: yarn lint
 
-  deploy_preview:
-    if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
-    needs: [build, lint]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Download Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: preview
-          path: dist
-      - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          target: sponsorship-website
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_4A899 }}"
-          projectId: cruzhacks-4a899
+#   deploy_preview:
+#     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
+#     needs: [build, lint]
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - name: Download Artifact
+#         uses: actions/download-artifact@v2
+#         with:
+#           name: preview
+#           path: dist
+#       - name: Deploy to Firebase
+#         uses: FirebaseExtended/action-hosting-deploy@v0
+#         with:
+#           target: sponsorship-website
+#           repoToken: "${{ secrets.GITHUB_TOKEN }}"
+#           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_CRUZHACKS_4A899 }}"
+#           projectId: cruzhacks-4a899
