@@ -55,7 +55,7 @@ const SupportSection: React.FC = () => (
         CruzHacks will benefit you!
       </div>
       <div className='SupportSection__container--SponsorContainer--button'>
-        <button
+        {/* <button
           type='button'
           className='ConnectButton'
           onClick={() =>
@@ -66,7 +66,7 @@ const SupportSection: React.FC = () => (
           }
         >
           Connect here
-        </button>
+        </button> */}
       </div>
     </div>
   </div>

@@ -114,7 +114,7 @@ const Landing: React.FC = () => {
           </div>
 
           <div className='landing__container--inputs__row2'>
-            <button
+            {/* <button
               className={`landing__container--inputs__row2--button1${isLightClass()}`}
               onClick={() =>
                 window.open(
@@ -124,7 +124,7 @@ const Landing: React.FC = () => {
               }
             >
               Sponsor Us
-            </button>
+            </button> */}
             {/* <button
               className={`landing__container--inputs__row2--button2${isLightClass()}`}
               onClick={() =>
