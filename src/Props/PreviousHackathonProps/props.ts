@@ -5,6 +5,10 @@ export interface PreviousHackathonData {
 
 export const PreviousHackathonProps: Array<PreviousHackathonData> = [
   {
+    name: "CruzHacks 2024",
+    link: "https://cruzhacks.com",
+  },
+  {
     name: "CruzHacks 2023",
     link: "https://2023.cruzhacks.com",
   },
