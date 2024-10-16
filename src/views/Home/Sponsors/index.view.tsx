@@ -1,18 +1,17 @@
 import React from "react"
 import { SponsorsIconsLinks } from "../../../Props/Sponsors/props"
-import { nanoid } from "nanoid"
 import "./index.scss"
 
 const Sponsors: React.FC = () => (
   <div className='sponsors'>
-    Thanks to our Sponsors!
+    <h2>Thanks to our Sponsors!</h2>
     <div className='sponsors--icons'>
       {SponsorsIconsLinks.map((tier, index) => (
-        <div key={nanoid()} className={`sponsors--icons__row row${index + 1}`}>
+        <div key={`row-${index}`} className={`sponsors--icons__row row${index + 1}`}>
           {tier.map(item => (
             <a
               className='sponsor-anchors'
-              key={nanoid()}
+              key={item.link}
               href={item.link}
               target='_blank'
               referrerPolicy='no-referrer'

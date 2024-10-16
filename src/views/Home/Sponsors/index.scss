@@ -1,89 +1,42 @@
-@use "../../../stylesheets/fonts";
-@use "../../../stylesheets/responsiveness";
-
 .sponsors {
+  padding: 10px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
 
-  @include fonts.subheader;
-  font-size: min(4vw, 40px);
-  gap: 1em;
+  h2 {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
 
-  &--icons {
+  .sponsors--icons {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    align-items: center;
 
-    &__row {
+    .sponsors--icons__row {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap; /* This will allow icons to wrap if there are too many in one row */
+      margin-bottom: 0px;
+      gap: 5.5px; /* Add spacing between sponsors */
+
+      .sponsor-anchors {
+        display: inline-block;
+        width: 120px;
+        height: 120px;
+        padding-bottom: 0px;
+        margin-right: 35px;
+        transition: transform 0.2s;
+
+        &:hover {
+          transform: scale(1.45);
+        }
+
+        .sponsorIcon {
+          width: 100%;
+          height: 100%;
+          object-fit: contain; /* Ensure icons don't stretch awkwardly */
+        }
+      }
     }
   }
-}
-
-.row5 {
-  margin-top: 0.5em;
-}
-
-.tier1 {
-  width: 90%;
-  height: 90%;
-}
-
-.tier2 {
-  width: 80%;
-  height: 80%;
-
-  @include responsiveness.screen(smallest, phone) {
-    width: 75%;
-    height: 75%;
-  }
-}
-
-.tier3 {
-  width: 75%;
-  height: 75%;
-
-  @include responsiveness.screen(smallest, phone) {
-    width: 70%;
-    height: 70%;
-  }
-}
-
-.tier4 {
-  width: 70%;
-  height: 70%;
-
-  @include responsiveness.screen(smallest, phone) {
-    width: 65%;
-    height: 65%;
-  }
-}
-
-.tier5 {
-  width: 80%;
-  height: 80%;
-
-  @include responsiveness.screen(smallest, phone) {
-    width: 80%;
-    height: 80%;
-  }
-}
-
-.sponsor-anchors {
-  padding: none;
-  margin: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Verbwire {
-  min-width: 90%;
-}
-
-.echo3D {
-  min-height: 90%;
 }
