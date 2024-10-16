@@ -37,7 +37,7 @@ import { ReactComponent as StandOutSticekrs } from "../../assets/sponsors/StandO
 import { ReactComponent as Backbone } from "../../assets/sponsors/Backbone.svg"
 import { ReactComponent as Wolfram } from "../../assets/sponsors/Wolfram.svg"
 import { ReactComponent as Balsamiq } from "../../assets/sponsors/Balsamiq.svg"
-import { ReactComponent as Echo3d } from "../../assets/sponsors/Echo3d.svg"
+import { ReactComponent as Echo3d } from "../../assets/sponsors/echo3d.svg"
 import { ReactComponent as Vectara } from "../../assets/sponsors/Vectara.svg"
 import { ReactComponent as Verbwire } from "../../assets/sponsors/Verbwire.svg"
 import { ReactComponent as Axure } from "../../assets/sponsors/Axure.svg"
