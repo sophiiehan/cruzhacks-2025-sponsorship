@@ -85,7 +85,7 @@ const Landing: React.FC = () => {
         <div className='more-info'>
           <div className='date'>
             <CalendarDaysIcon className='date-icon' />
-            January 25-27, 2025
+            January 18-20, 2025
           </div>
           <div className='location'>
             <MapPinIcon className='location-icon' />
