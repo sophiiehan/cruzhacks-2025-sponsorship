@@ -87,10 +87,10 @@ const Landing: React.FC = () => {
             <CalendarDaysIcon className='date-icon' />
             January 18-20, 2025
           </div>
-          <div className='location'>
+          {/* <div className='location'>
             <MapPinIcon className='location-icon' />
             Stevenson Event Center @ UC Santa Cruz
-          </div>
+          </div> */}
         </div>
         <div className='landing__container--inputs'>
           <div className='landing__container--inputs__row-container'>
