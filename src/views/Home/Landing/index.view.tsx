@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { ReactComponent as Moon } from "../../../assets/decorative/Moon.svg"
 import { ReactComponent as Sun } from "../../../assets/decorative/Sun.svg"
 import { SocialButton } from "../../../components/Button/SocialButton"
-import { CalendarDaysIcon, MapPinIcon } from "@heroicons/react/24/outline"
+import { CalendarDaysIcon } from "@heroicons/react/24/outline"
 import {
   SocialButtonInputs,
   SocialButtonProps,
